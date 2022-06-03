@@ -1,0 +1,76 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>Reto 3 Alejandro Urzola</title>
+  <link rel="stylesheet" href="styles/app.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Montserrat&display=swap" rel="stylesheet">
+  <link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Material+Symbols+Rounded:opsz,wght,FILL,GRAD@48,400,0,0" />
+
+</head>
+<body>
+  <div id="main-window">
+    <div id="title-bar">
+      <div id="red-btn" class="window-btn"></div>
+      <div id="yellow-btn" class="window-btn"></div>
+      <div id="green-btn" class="window-btn"></div>
+      <div id="window-title">Reto 3</div>
+    </div>
+    <div id="main-content">
+      <div id="data-input">
+        <div id="form-container">
+          <h3>Datos del paciente</h1>
+          <form action="#">
+            <div id="first-column">
+              <label for="name">Nombre:</label>
+              <input name="name" value="" placeholder="ej. Alejandro Urzola" type="text" tabindex="1">
+              <label for="idNumber">Cedula</label>
+              <input name="idNumber" value="" placeholder=":ej. 1140576439" type="text" tabindex="3">
+              <label for="age">Edad: </label>
+              <input name="age" value="" placeholder="ej. 26" type="text" tabindex="5">
+            </div>
+            <div id="second-column">
+              <label for="city">Ciudad: </label>
+              <input name="city" value="" placeholder="ej. Barranquilla" type="text" tabindex="2">
+              <label for="eps">EPS: </label>
+              <input name="eps" value="" placeholder="ej. Saludtotal" type="text" tabindex="4">
+              <label for="illness">Enfermedad diagnosticada: </label>
+              <input name="illness" value="" placeholder="ej. Diabetes" type="text" tabindex="6"> <br>
+            </div>
+          </form>
+          <div id="btn-container">
+            <button id="add"><span class="material-symbols-rounded">person_add</span>Ingresar paciente</button>
+            <button id="delete"><span class="material-symbols-rounded">person_remove</span>Eliminar paciente</button>
+          </div>
+        </div>
+        <div id="message-box">
+        </div>
+        <div id="form-entries">
+          <table id="main-table">
+            <div>
+              <tr>
+                <th>Nombre</th>
+                <th>Cedula</th>
+                <th>Edad</th>
+                <th>ciudad</th>
+                <th>EPS</th>
+                <th>Enfermedad</t>
+              </tr>
+            </div>
+          </table>
+        </div>
+      </div>
+      <div id="center-container">
+        <button id="execute">Procesar</button>
+      </div>
+      <div id="data-output">
+      </div>
+    </div>
+  </div>
+  <script src="js/app.js"></script>
+</body>
+</html>
