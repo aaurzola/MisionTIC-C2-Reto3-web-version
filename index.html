@@ -23,31 +23,41 @@
     <div id="main-content">
       <div id="data-input">
         <div id="form-container">
-          <h3>Datos del paciente</h1>
+          <h1>Datos del paciente</h1>
           <form action="#">
             <div id="first-column">
-              <label for="name">Nombre:</label>
+              <label for="name">Nombre</label>
               <input name="name" value="" placeholder="ej. Alejandro Urzola" type="text" tabindex="1">
               <label for="idNumber">Cedula</label>
-              <input name="idNumber" value="" placeholder=":ej. 1140576439" type="text" tabindex="3">
-              <label for="age">Edad: </label>
+              <input name="idNumber" value="" placeholder="ej. 1140576439" type="text" tabindex="3">
+              <label for="age">Edad </label>
               <input name="age" value="" placeholder="ej. 26" type="text" tabindex="5">
             </div>
             <div id="second-column">
-              <label for="city">Ciudad: </label>
+              <label for="city">Ciudad </label>
               <input name="city" value="" placeholder="ej. Barranquilla" type="text" tabindex="2">
-              <label for="eps">EPS: </label>
+              <label for="eps">EPS </label>
               <input name="eps" value="" placeholder="ej. Saludtotal" type="text" tabindex="4">
-              <label for="illness">Enfermedad diagnosticada: </label>
-              <input name="illness" value="" placeholder="ej. Diabetes" type="text" tabindex="6"> <br>
+              <label for="illness">Enfermedad diagnosticada </label>
+               <select class="u-full-width" id="color" name="illness" tabindex="6">
+                <option value="">Seleccione</option>
+                <option value="Cancer">Cancer</option>
+                <option value="Cardiovasculares">Cardiovasculares</option>
+                <option value="Respiratorias">Respiratorias</option>
+                <option value="Cerebrovasculares">Cerebrovasculares</option>
+                <option value="Hipertansion">Hipertension</option>
+                <option value="Diabetes">Diabetes</option>
+              </select>
             </div>
           </form>
           <div id="btn-container">
-            <button id="add"><span class="material-symbols-rounded">person_add</span>Ingresar paciente</button>
-            <button id="delete"><span class="material-symbols-rounded">person_remove</span>Eliminar paciente</button>
+            <button id="add"><span class="material-symbols-rounded">person_add</span></button>
+            <button id="execute">Procesar</button>
+            <button id="delete"><span class="material-symbols-rounded">person_remove</span></button>
           </div>
         </div>
         <div id="message-box">
+          <p id="message"></p>
         </div>
         <div id="form-entries">
           <table id="main-table">
@@ -64,10 +74,38 @@
           </table>
         </div>
       </div>
-      <div id="center-container">
-        <button id="execute">Procesar</button>
+      <div id="wait-panel">
+        <p id="initial-message">Clic en procesar para mostrar resultados</p>
+        <div class="sk-folding-cube hide">
+          <div class="sk-cube1 sk-cube"></div>
+          <div class="sk-cube2 sk-cube"></div>
+          <div class="sk-cube4 sk-cube"></div>
+          <div class="sk-cube3 sk-cube"></div>
+        </div>
       </div>
       <div id="data-output">
+        <h1>Resultados</h1>
+        <div id="first-result">
+          <h2>pacientes por ciudades</h2>
+          <table id="city-table">
+            <tr>
+              <th>Ciudad</th>
+              <th>Cantidad</th>
+            </tr>
+            </table>
+        </div>
+        <div id="second-result">
+          <h2 id="second-result-target">Ciudad con menor numero de pacientes</h2>
+        </div>
+        <div id="third-result">
+          <h2>pacientes tercera edad</h2>
+          <table id="old-people-table">
+            <tr>
+              <th>Nombre</th>
+              <th>Cedula</th>
+            </tr>
+          </table>
+        </div>
       </div>
     </div>
   </div>
