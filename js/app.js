@@ -11,6 +11,8 @@ const illnessInput = document.querySelector("select[name=illness]");
 const addBtn = document.querySelector("#add");
 const deleteBtn = document.querySelector("#delete");
 const executeBtn = document.querySelector("#execute");
+const resetBtn = document.createElement("button");
+resetBtn.innerHTML = `<span class="material-symbols-rounded">restart_alt</span>`
 
 //others
 const peopleTable = document.querySelector("tbody");
@@ -22,6 +24,7 @@ const loader = document.querySelector(".sk-folding-cube");
 const waitRightPanel = document.querySelector("#wait-panel");
 const resultsRightPanel = document.querySelector("#data-output");
 const secondResult = document.querySelector("#second-result-target");
+const btnContainer = document.querySelector("#btn-container");
 
 
 //gloabl variables
@@ -55,6 +58,11 @@ illnessInput.addEventListener("change", addProperty)
 addBtn.addEventListener("click", addEntry);
 deleteBtn.addEventListener("click", deleteEntry);
 executeBtn.addEventListener("click", calculate);
+window.addEventListener("load", event => {
+  resetBtn.onclick = function () {
+    location.reload(false);
+  }
+});
 
 
 //functions
@@ -210,7 +218,7 @@ function calculate() {
   setTimeout(() => {
     waitRightPanel.style.display = "none";
     resultsRightPanel.style.display = "flex";
-  }, 2500);
+  }, 1700);
 
   /* first we get the unique Cities as an array of obj with two properties
   name of the city and counter of repetition within people */
@@ -235,11 +243,11 @@ function calculate() {
   console.log(lowestCityCount);
 
   const lowestCityName = uniqueCities.filter((e) => {
-    return (e.quantity === lowestCityCount)
+    return (e.quantity === lowestCityCount);
   })
   console.log(lowestCityName);
 
-  document.querySelector("#second-result-target").textContent = `${lowestCityName[0].city} es la ciudad con menor numero de pacientes`;
+  document.querySelector("#second-result-target").innerHTML = `<span style="color: #8bc34a;">${lowestCityName[0].city}</span> es la ciudad con menor numero de pacientes`;
 
 
   /*here we need to filterout our mainlist by people over 60 years old*/
@@ -258,7 +266,10 @@ function calculate() {
     oldPeopleTable.appendChild(oldPeopleNotFound);
   }
 
-  disableBtn(executeBtn);
+  btnContainer.removeChild(btnContainer.children[0]);
+  btnContainer.removeChild(btnContainer.children[0]);
+  btnContainer.removeChild(btnContainer.children[0]);
+  btnContainer.appendChild(resetBtn);
 }
 
 function getUniqueCities(array) {
